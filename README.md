@@ -1,29 +1,30 @@
-# ESP8266 MQTT IR & LED Control
+# ESP8266 IoT – Phone & IR Controlled LED
 
 ## Overview
-An ESP8266-based project that uses MQTT to control an LED remotely and publish IR sensor data in real time.
+An ESP8266-based IoT project demonstrating bi-directional control between a phone app and hardware.  
+
+- The **phone app switch** controls the **LED on the breadboard**  
+- The **IR remote** controls the **LED symbol on the phone app**
 
 ## Features
-- WiFi connection using ESP8266
-- MQTT communication using EMQX broker
-- LED control via subscribed MQTT topic
-- IR sensor state published every 1 second
+- Phone app switch controls physical LED on breadboard
+- IR remote controls LED symbol in phone app
+- ESP8266 handles communication between devices
 
 ## Hardware
 - ESP8266 (NodeMCU)
-- LED (D5)
-- IR sensor (D2)
+- LED (Breadboard)
+- IR remote
+- Connecting wires
 
-## MQTT Topics
-- Subscribe: `/sector/salma/led`
-- Publish: `/sector/salma/ir`
+## Communication
+- ESP8266 reads IR remote input and updates phone app LED
+- Phone app switch controls physical LED on breadboard
 
 ## Libraries
 - ESP8266WiFi
-- PubSubClient
-
-## Broker
-- broker.emqx.io (Port 1883)
+- PubSubClient (for MQTT communication if used)
 
 ## Notes
-WiFi credentials are intentionally excluded for security reasons.
+WiFi credentials and sensitive info are excluded for security.  
+
